@@ -31,13 +31,9 @@ def generate_incidence_matrix():
             unique_tokens = set(normalized_tokens)
             for token in unique_tokens:
                 if token not in incidence_matrix:
-                    if token == 'in':
-                        print(f'in not in matrix, adding in for {doc}-{doc_id}')
                     incidence_matrix[token] = [0 for i in documents]
                     incidence_matrix[token][doc_id] = 1
                 else:
-                    if token == 'in':
-                        print(f'in already in matrix, incrementing for {doc}-{doc_id}')
                     incidence_matrix[token][doc_id] = 1
     return incidence_matrix
 
